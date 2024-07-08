@@ -87,8 +87,14 @@ function App() {
   }, [isRunning, time, isCountingUp, lastUpdate]);
 
   const handleStart = () => {
-    setLastUpdate(Date.now());
-    setIsRunning(true);
+    if (!isRunning) {
+      setLastUpdate(Date.now());
+      if (!isCountingUp) {
+        setSampleCount(countdownStart);
+        setTime(countdownStart * 1000);
+      }
+      setIsRunning(true);
+    }
   };
 
   const handleStop = () => {
@@ -98,7 +104,7 @@ function App() {
   const handleReset = () => {
     setIsRunning(false);
     setTime(isCountingUp ? 0 : countdownStart * 1000);
-    setSampleCount(isCountingUp ? 0 : countdownStart); // カウントアップ時は0、カウントダウン時はcountdownStartに設定
+    setSampleCount(isCountingUp ? 0 : countdownStart);
   };
 
   const handleColorPatternChange = (pattern) => {
