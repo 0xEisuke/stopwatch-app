@@ -1,0 +1,19 @@
+/* src/index.css */
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background: #e0e0e0;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+canvas {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  background: transparent;
+}
