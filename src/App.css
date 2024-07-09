@@ -23,6 +23,11 @@
   gap: 5px;
 }
 
+.controls input[type="range"] {
+  margin-left: 10px;
+  width: 150px; /* 幅を調整 */
+}
+
 .controls input {
   padding: 5px;
   border: 1px solid #ccc;

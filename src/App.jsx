@@ -130,7 +130,15 @@ function App() {
       <div className="controls">
         <label>
           Sphere Size:
-          <input type="number" value={sphereSize} step="0.01" onChange={(e) => setSphereSize(Number(e.target.value))} />
+          <input
+            type="range"
+            min="0.01"
+            max="0.05"
+            step="0.01"
+            value={sphereSize}
+            onChange={(e) => setSphereSize(Number(e.target.value))}
+          />
+          <span>{sphereSize.toFixed(2)}</span>
         </label>
         <div className="color-patterns">
           {Object.keys(colorPatterns).map((pattern) => (
